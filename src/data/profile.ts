@@ -65,7 +65,8 @@ export const profile = {
   ],
 
   assets: {
-    portraitJpg: '/img/foto.jpg',
+    /** Path relatif terhadap base URL. Prefix BASE_URL saat dipakai di komponen. */
+    portraitJpg: 'img/foto.jpg',
     portraitAlt: 'Wiliam Fredrick Sakalessy',
   },
 };

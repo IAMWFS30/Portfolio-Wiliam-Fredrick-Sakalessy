@@ -89,7 +89,7 @@ export function Hero() {
               />
               <div className="relative overflow-hidden rounded-surface shadow-sheet ring-1 ring-white/10">
                 <img
-                  src={assets.portraitJpg}
+                  src={`${import.meta.env.BASE_URL}${assets.portraitJpg}`}
                   alt={assets.portraitAlt}
                   fetchPriority="high"
                   decoding="async"

@@ -19,7 +19,7 @@ export function Navbar() {
         <div className="flex h-[var(--header-h)] items-center justify-between gap-6">
           <a href="#home" className="flex items-center gap-2.5">
             <img
-              src="/img/logo-wiliam.jpeg"
+              src={`${import.meta.env.BASE_URL}img/logo-wiliam.jpeg`}
               alt="Wiliam FS logo"
               width={32}
               height={32}
