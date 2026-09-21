@@ -1,24 +1,21 @@
-name: Deploy to GitHub Pages
+name: Build and publish to gh-pages
 
-# Build the Vite site and publish it to GitHub Pages on every push to main.
+# Build the Vite site and publish the built output to the `gh-pages` branch.
+# Pages should be set to: Settings → Pages → Deploy from a branch → gh-pages /(root).
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-# Permissions required by the Pages deploy action.
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
-# Only one Pages deploy at a time; let a newer run cancel an in-progress one.
 concurrency:
-  group: pages
+  group: pages-publish
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,28 +31,21 @@ jobs:
         run: npm ci
 
       - name: Build
-        # BASE_PATH must match the repo name so assets resolve under the
-        # project Pages sub-path. SITE_URL makes OG/canonical/sitemap absolute.
+        # BASE_PATH matches the repo name so assets resolve under the project
+        # Pages sub-path. SITE_URL makes OG/canonical/sitemap absolute.
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
           SITE_URL: https://${{ github.repository_owner }}.github.io
         run: npm run build
 
-      - name: SPA fallback (copy index.html to 404.html)
-        run: cp dist/index.html dist/404.html
+      - name: SPA fallback + disable Jekyll
+        run: |
+          cp dist/index.html dist/404.html
+          touch dist/.nojekyll
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
