@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/img/logo-wiliam.jpeg" />
+
+    <title>Wiliam Fredrick Sakalessy | BI &amp; Data Engineer · Web App Developer</title>
+    <meta
+      name="description"
+      content="Freelance BI & Data Engineer and web app developer. SAP BW, Power BI, SQL, Python dashboards, and full-stack web apps — from requirements to a deployed, documented result."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- URL kanonik. Absolut karena mesin pencari mengabaikan canonical relatif. -->
+    <link rel="canonical" href="%SITE_URL%/" />
+
+    <!-- Open Graph. og:url & og:image di-generate absolut saat build dari env
+         SITE_URL (lihat vite.config.ts). -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%SITE_URL%/" />
+    <meta property="og:site_name" content="Wiliam Fredrick Sakalessy" />
+    <meta
+      property="og:title"
+      content="Wiliam Fredrick Sakalessy | BI &amp; Data Engineer · Web App Developer"
+    />
+    <meta
+      property="og:description"
+      content="Freelance BI & Data Engineer and web app developer. Dashboards, data pipelines, and full-stack web apps."
+    />
+    <meta property="og:image" content="%SITE_URL%/og-image.svg" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Portfolio card for Wiliam Fredrick Sakalessy, BI & Data Engineer and web app developer"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Wiliam Fredrick Sakalessy | BI &amp; Data Engineer · Web App Developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Freelance BI & Data Engineer and web app developer. Dashboards, data pipelines, and full-stack web apps."
+    />
+    <meta name="twitter:image" content="%SITE_URL%/og-image.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured data. Kontak sengaja tidak dimasukkan ke metadata. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Wiliam Fredrick Sakalessy",
+        "url": "%SITE_URL%/",
+        "jobTitle": "BI & Data Engineer, Web App Developer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bekasi",
+          "addressRegion": "West Java",
+          "addressCountry": "ID"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Kalbis Institute"
+        },
+        "knowsAbout": [
+          "SAP BW/4HANA",
+          "SAP BusinessObjects",
+          "Power BI",
+          "SQL",
+          "Python",
+          "Data Engineering",
+          "Web Application Development"
+        ],
+        "knowsLanguage": ["id", "en"],
+        "sameAs": [
+          "https://github.com/IAMWFS30",
+          "https://www.linkedin.com/in/wiliam-fredrick-sakalessy"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS
+   Tailwind v4 CSS-first: this @theme block generates utilities
+   (bg-navy, text-blue, font-display, rounded-surface). Palette
+   mirrors Wiliam's CV — navy structure, blue for action.
+   ============================================================ */
+@theme {
+  /* Struktur & identitas: deep ink navy. */
+  --color-navy: #0b1220;
+  --color-navy-800: #141d33;
+  --color-navy-700: #1e2a47;
+
+  /* Primary: electric indigo — lebih berkarakter & "senior" dari biru korporat.
+     Dipakai untuk aksi utama, highlight, dan aksen di permukaan gelap. */
+  --color-blue: #4338ca;
+  --color-blue-500: #6366f1;
+  --color-blue-400: #818cf8;
+
+  /* Aksen sekunder untuk kategori proyek — dijaga tetap harmonis & profesional. */
+  --color-teal: #0d9488;
+  --color-teal-400: #2dd4bf;
+  --color-amber: #d97706;
+  --color-amber-400: #fbbf24;
+  --color-violet: #7c3aed;
+  --color-violet-400: #a78bfa;
+
+  --color-softblue: #eef0fe;
+  --color-ivory: #f7f8fb;
+  --color-charcoal: #131a2b;
+  --color-muted: #4a5568;
+  --color-line: #e2e5ee;
+
+  --color-navy-line: #1e2a47;
+
+  --font-display: "Oswald", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-surface: 18px;
+  --radius-inner: 12px;
+
+  --shadow-soft: 0 18px 50px -22px rgb(11 18 32 / 0.30);
+  --shadow-sheet: 0 24px 60px -20px rgb(11 18 32 / 0.38);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+@layer base {
+  :root {
+    --header-h: 4.5rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  section[id],
+  div[id] {
+    scroll-margin-top: calc(var(--header-h) + 1.5rem);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-navy);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+    line-height: 1.02;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.15rem);
+    line-height: 1.15;
+  }
+
+  h3 {
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+    line-height: 1.25;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  i,
+  em,
+  address {
+    font-style: normal;
+  }
+
+  /* Visible focus on every focusable element, never removed. */
+  :focus-visible {
+    outline: 2px solid var(--color-blue-500);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .on-navy :focus-visible {
+    outline-color: #ffffff;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+@utility text-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}

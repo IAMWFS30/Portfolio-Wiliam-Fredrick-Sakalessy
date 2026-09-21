@@ -1,0 +1,6 @@
+# Portofolio publik, dimaksudkan untuk terindeks. Tidak ada path privat.
+# Baris Sitemap ditambahkan otomatis saat build oleh vite.config.ts memakai
+# URL absolut dari SITE_URL.
+
+User-agent: *
+Allow: /
