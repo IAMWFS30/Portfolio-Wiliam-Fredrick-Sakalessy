@@ -16,7 +16,12 @@ export const profile = {
   roleSuffix: 'Web App Developer for hire',
 
   /** Baris peran singkat di bawah nama (gaya editorial). Faktual dari CV. */
-  roleLine: ['BI & Data Engineer', 'Web App Developer', 'SAP BW Specialist'],
+  roleLine: [
+    'BI & Data Engineer',
+    'Web App Developer',
+    'SAP BW Specialist',
+    'SAP ABAP Specialist',
+  ],
 
   /** Tagline editorial di hero — merangkum arah kerja, tanpa klaim/angka. */
   tagline: 'Turning data into decisions, and ideas into working software.',
