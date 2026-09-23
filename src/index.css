@@ -151,3 +151,12 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
+
+/* Sembunyikan scrollbar (dipakai bar navigasi mobile yang bisa di-geser). */
+@utility scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
