@@ -1,0 +1,8 @@
+# Portofolio publik, dimaksudkan untuk terindeks. Tidak ada path privat.
+# Baris Sitemap ditambahkan otomatis saat build oleh vite.config.ts memakai
+# URL absolut dari SITE_URL.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://iamwfs30.github.io/Portfolio-Wiliam-Fredrick-Sakalessy/sitemap.xml
