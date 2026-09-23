@@ -5,4 +5,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://iamwfs30.github.io/Portfolio-Wiliam-Fredrick-Sakalessy/sitemap.xml
+Sitemap: https://IAMWFS30.github.io/Portfolio-Wiliam-Fredrick-Sakalessy/sitemap.xml
