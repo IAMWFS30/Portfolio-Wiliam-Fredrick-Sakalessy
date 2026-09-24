@@ -102,26 +102,48 @@ export function Projects() {
                     {project.liveUrl || project.repoUrl ? (
                       <div className="mt-3 flex flex-wrap gap-2">
                         {project.liveUrl ? (
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 rounded-full bg-navy px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-navy-800"
-                          >
-                            Live demo
-                            <ExternalLink aria-hidden="true" className="size-3.5" />
-                          </a>
+                          project.liveUrl === '#' ? (
+                            <span
+                              aria-disabled="true"
+                              title="Coming soon"
+                              className="inline-flex cursor-not-allowed items-center gap-1.5 rounded-full bg-navy/40 px-4 py-2 text-xs font-semibold text-white/90"
+                            >
+                              Live demo
+                              <span className="rounded-full bg-white/20 px-1.5 text-[0.625rem]">soon</span>
+                            </span>
+                          ) : (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 rounded-full bg-navy px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-navy-800"
+                            >
+                              Live demo
+                              <ExternalLink aria-hidden="true" className="size-3.5" />
+                            </a>
+                          )
                         ) : null}
                         {project.repoUrl ? (
-                          <a
-                            href={project.repoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 rounded-full border border-navy/20 px-4 py-2 text-xs font-semibold text-navy transition-colors hover:border-navy/45 hover:bg-ivory"
-                          >
-                            Source
-                            <Code2 aria-hidden="true" className="size-3.5" />
-                          </a>
+                          project.repoUrl === '#' ? (
+                            <span
+                              aria-disabled="true"
+                              title="Coming soon"
+                              className="inline-flex cursor-not-allowed items-center gap-1.5 rounded-full border border-navy/15 px-4 py-2 text-xs font-semibold text-muted"
+                            >
+                              Source
+                              <span className="rounded-full bg-navy/10 px-1.5 text-[0.625rem]">soon</span>
+                            </span>
+                          ) : (
+                            <a
+                              href={project.repoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 rounded-full border border-navy/20 px-4 py-2 text-xs font-semibold text-navy transition-colors hover:border-navy/45 hover:bg-ivory"
+                            >
+                              Source
+                              <Code2 aria-hidden="true" className="size-3.5" />
+                            </a>
+                          )
                         ) : null}
                       </div>
                     ) : null}

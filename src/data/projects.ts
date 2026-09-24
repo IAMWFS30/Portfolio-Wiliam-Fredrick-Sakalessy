@@ -91,6 +91,20 @@ export const projects: Project[] = [
     accent: 'indigo',
     icon: 'pipeline',
   },
+  {
+    id: 'period-tracker',
+    index: '07',
+    title: 'ARIMBI — Period Tracker PWA',
+    roleTag: 'Full-stack · Solo build',
+    tags: ['PWA', 'Service Worker', 'Offline'],
+    description:
+      'An installable, offline-first period-tracking web app: cycle countdown, calendar with fertile/ovulation markers, mood & symptom logging, and reminders — all stored locally on the device, nothing sent to any server.',
+    deliverable: 'Installable PWA + offline data store',
+    liveUrl: 'https://arimbi-period-eta-five.vercel.app/',
+    repoUrl: 'https://github.com/IAMWFS30/ARIMBI-Period-Tracker',
+    accent: 'violet',
+    icon: 'app',
+  },
 ];
 
 /**
