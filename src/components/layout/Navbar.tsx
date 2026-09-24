@@ -1,5 +1,4 @@
-import { Code2 } from 'lucide-react';
-import { navItems, profile } from '../../data/profile';
+import { navItems } from '../../data/profile';
 import { useActiveSection } from '../../hooks/useActiveSection';
 import { cn } from '../../lib/cn';
 import { Container } from './Container';
@@ -59,26 +58,13 @@ export function Navbar() {
             </ul>
           </nav>
 
-          {/* Aksi (tampil di semua ukuran) */}
-          <div className="flex items-center gap-2">
-            <a
-              href={profile.contact.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub profile"
-              className="grid size-10 place-items-center rounded-full text-navy transition-colors hover:bg-softblue"
-            >
-              <Code2 aria-hidden="true" className="size-[18px]" />
-            </a>
-            <a
-              href={profile.contact.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-navy px-4 py-2 text-[0.8125rem] font-semibold text-white transition-colors hover:bg-navy-800 sm:px-5 sm:py-2.5"
-            >
-              Hire me
-            </a>
-          </div>
+          {/* Aksi utama — mengarah ke section Contact (spotlight). */}
+          <a
+            href="#contact"
+            className="shrink-0 rounded-full bg-navy px-4 py-2 text-[0.8125rem] font-semibold text-white transition-colors hover:bg-navy-800 sm:px-5 sm:py-2.5"
+          >
+            Contact me
+          </a>
         </div>
       </Container>
 

@@ -1,4 +1,4 @@
-import { ArrowRight, Code2, MapPin, MessageCircle } from 'lucide-react';
+import { ArrowRight, Download, MapPin } from 'lucide-react';
 import { profile, stats } from '../../data/profile';
 import { Button } from '../ui/Button';
 import { Container } from '../layout/Container';
@@ -60,17 +60,13 @@ export function Hero() {
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
-              <Button href={contact.whatsappUrl} external>
-                <MessageCircle aria-hidden="true" className="size-4" />
-                Start a project
+              <Button href={`${import.meta.env.BASE_URL}${assets.cvPdf}`} download>
+                <Download aria-hidden="true" className="size-4" />
+                Download CV
               </Button>
               <Button href="#work" variant="onNavy">
                 View work
                 <ArrowRight aria-hidden="true" className="size-4" />
-              </Button>
-              <Button href={contact.githubUrl} external variant="onNavy">
-                <Code2 aria-hidden="true" className="size-4" />
-                GitHub
               </Button>
             </div>
 

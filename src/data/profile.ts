@@ -73,6 +73,8 @@ export const profile = {
     /** Path relatif terhadap base URL. Prefix BASE_URL saat dipakai di komponen. */
     portraitJpg: 'img/foto.jpg',
     portraitAlt: 'Wiliam Fredrick Sakalessy',
+    /** CV (freelance) di folder public. Path relatif terhadap base URL. */
+    cvPdf: 'CV-Wiliam-Fredrick-Sakalessy.pdf',
   },
 };
 
@@ -97,5 +99,4 @@ export const navItems: NavItem[] = [
   { id: 'process', label: 'Process' },
   { id: 'skills', label: 'Skills' },
   { id: 'background', label: 'Background' },
-  { id: 'contact', label: 'Contact' },
 ];
